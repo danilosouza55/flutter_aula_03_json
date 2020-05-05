@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:aula03appjson/ui/detalhes_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:transparent_image/transparent_image.dart';
@@ -108,7 +109,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DetalhesPage(snapshot.data[index])));
+            },
           );
         });
   }
